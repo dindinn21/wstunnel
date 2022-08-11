@@ -249,7 +249,7 @@ runServer useTLS = if useTLS then runTlsTunnelingServer else runTunnelingServer
 --  Commons
 --
 toPath :: TunnelSettings -> String
-toPath TunnelSettings{..} = "/" <> upgradePrefix <> "/"
+toPath TunnelSettings{..} = upgradePrefix <> "/"
                             <> toLower (show $ if protocol == UDP then UDP else TCP)
                             <> "/" <> destHost <> "/" <> show destPort
 
